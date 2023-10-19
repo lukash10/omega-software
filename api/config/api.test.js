@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-axios.post('http://localhost:3080/api/user', { name: 'Multicor', email: 'multicor@osoft.com', password: 'multicor@', role: 'ADMIN'});
+axios.post('http://localhost:3080/api/user', { name: 'BFMS', email: 'bfms@bfms.com', password: 'bfms@', role: 'ADMIN'});
 
 
 

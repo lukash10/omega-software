@@ -5,8 +5,9 @@ const { User } = require("../repository/models");
 module.exports = {
   
   doAuth: async (req, res) => {
-    const auth = req.body;
 
+    const auth = req.body;
+    
     const data = await db.doLogin(auth);
 
     res.send( data );

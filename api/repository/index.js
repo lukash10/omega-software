@@ -24,6 +24,8 @@ module.exports = {
       var result = {
         success: false,
         token: null,
+        email: null,
+        name: null
       };
 
       const user = await User.findOne({ where: { email: auth.login } });
@@ -42,9 +44,13 @@ module.exports = {
         result.token = jwt.sign({ userId: user.id }, 'myjwtsecret', {
           expiresIn: '10000000d',
         });
+        result.email = user.email;
+        result.name = user.name;
       }
 
+      //console.log("resultemail", result.email);
       return result;
+
     } catch (e) {
       console.log(e);
     }

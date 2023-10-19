@@ -11,7 +11,7 @@
             <div class="row" id="row_login" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
 
                 <div class="col" style="display: flex;justify-content: center;">
-                    <img class="pulse" src="/logo.png" style="width:200px;padding: 20px;">
+                    <img class="pulse" src="/logo.png" style="width:170px;padding: 20px;">
                 </div>
 
 
@@ -81,6 +81,8 @@ export default {
                 alert ('Falha no login. Verifique suas credenciais.')
             } else {
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('email', response.data.email);
+                localStorage.setItem('name', response.data.name);
                 this.$router.push('/dashboard');
             }
         }
@@ -140,8 +142,8 @@ body#login{
         transform: scale(0.1);
     }
     100%{
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
     }
 
 }
